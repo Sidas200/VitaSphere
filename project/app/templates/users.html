@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Usuarios</title>
+</head>
+<body>
+    <h2>Lista de usuarios</h2>
+    <p>Bienvenido, {{ request.session.nombre }}</p>
+    <ul>
+        {% for user in users %}
+            <li>{{ user.username }} - {{ user.email }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'logout' %}">Cerrar sesión</a>
+</body>
+</html>
