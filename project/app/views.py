@@ -90,6 +90,9 @@ def users(request):
 
     return render(request, "users.html", {"users": user_list})
 
+def home (request):
+    return render(request, "home.html")
+
 
 
 
