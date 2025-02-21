@@ -1,25 +1,56 @@
 {% extends 'defaultHeader.html' %}
-{% load static %}
+
+{% block title %}
+    Inicio de sesión
+{% endblock %}
+
+{% block links %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'form.css' %}">
+{% endblock %}
+
 {% block content %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-    <title>Login</title>
-    <h2 style="text-align: center;">Login</h2>
-    <form method="post">
+<div class="divForm">
+    <h1 class="greetingForm">Bienvenido de nuevo!</h1>
+    <h3 class="greetingComplement">Inicie sesión para acceder a su cuenta</h3>
+    <form class="form" action="/login/" method="post">
         {% csrf_token %}
-        <label for="username">Username:</label>
-        <input type="text" name="username" required>
-        
-        <label for="password">Password:</label>
-        <input type="password" name="password" required>
-        
-        <button type="submit">Login</button>
+
+        <md-outlined-text-field
+            type="email"
+            class="input"
+            id="email"
+            name="email"
+            label="Correo electrónico"
+            placeholder="Ingresa tu correo electrónico"
+            pattern="[\w\d-]+"
+            suffix-text="@gmail.com"
+            required
+            error-text="Por favor, ingrese su correo electrónico">
+        </md-outlined-text-field>
+
+        <md-outlined-text-field
+            type="password"
+            class="input"
+            id="password"
+            name="password"
+            label="Contraseña"
+            placeholder="Ingresa tu contraseña"
+            required
+            error-text="Por favor, ingrese su contraseña">
+        </md-outlined-text-field>
+
+        <md-filled-tonal-button
+            type="submit"
+            class="input"
+            id="submitbtn"
+            name="submit">                
+            Iniciar sesión
+        </md-filled-tonal-button>
     </form>
-</body>
-</html>
+    {% if error %}
+        <p class="wrongCredentials">{{error}}</p>
+    {% endif %}
+    <a href="/recuperarContraseña">¿Olvidaste tu contraseña?</a>
+</div>
 {% endblock %}
