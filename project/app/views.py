@@ -58,21 +58,20 @@ def registro_usuario(request):
 
 def login(request):
     if request.method == "POST":
-        username = request.POST.get("username")  # ✅ Usar .get() para evitar errores si la clave no existe
+        username = request.POST.get("username")
         password = request.POST.get("password")
 
-        if not username or not password:  # ✅ Validar que se hayan ingresado datos
+        if not username or not password:
             return HttpResponse("Por favor, ingresa usuario y contraseña", status=400)
 
         user = person_collection.find_one({"username": username})
 
         if user and check_password(password, user["password"]):
-            # ✅ Guardar sesión
             request.session["username"] = user["username"]
             request.session["email"] = user["email"]
             request.session["nombre"] = user["nombre"]
-            request.session["is_authenticated"] = True  # Bandera de autenticación
-            
+            request.session["is_authenticated"] = True
+    
             return redirect("users")
 
         return HttpResponse("Usuario o contraseña incorrectos", status=401)
@@ -80,7 +79,6 @@ def login(request):
     return render(request, "login.html")
 
 def logout_view(request):
-    # ✅ Limpiar la sesión
     request.session.flush()
     return redirect("login")
 
