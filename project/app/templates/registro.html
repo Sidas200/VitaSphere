@@ -1,20 +1,120 @@
 {% extends 'defaultHeader.html' %}
-{% load static %}
+
+{% block title %}
+    Registro
+{% endblock %}
+
+{% block links %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'form.css' %}">
+{% endblock %}
+
 {% block content %}
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro de Usuario</title>
-</head>
-<body>
-    <h2>Registro de Usuario</h2>
-    <form method="post">
+<div class="divForm">
+    <h1 class="greetingForm">Crea una cuenta!</h1>
+    <h3 class="greetingComplement">Registrate para comenzar</h3>
+    <form class="form" action="/login/" method="post">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Registrarse</button>
+
+        <md-outlined-text-field
+            type="text"
+            class="input"
+            id="fname"
+            name="fname"
+            label="Nombre"
+            placeholder="Ingresa tu nombre"
+            required
+            error-text="Por favor, ingrese su nombre">
+        </md-outlined-text-field>
+
+        <md-outlined-text-field
+            type="text"
+            class="input"
+            id="lname"
+            name="lname"
+            label="Apellido"
+            placeholder="Ingresa tu apellido"
+            required
+            error-text="Por favor, ingrese su apellido">
+        </md-outlined-text-field>
+
+        <md-outlined-text-field
+            type="date"
+            class="input"
+            id="birthday"
+            name="birthday"
+            label="Fecha de nacimiento"
+            placeholder="Ingresa tu fecha de nacimiento"
+            required
+            error-text="Por favor, ingrese su fecha de nacimiento">
+        </md-outlined-text-field>
+
+        <md-outlined-select class="input" id="sexo" name="sexo" label="Sexo">
+            <md-select-option aria-label="blank"></md-select-option>
+            <md-select-option value="F">
+              <div slot="headline">Femenino</div>
+            </md-select-option>
+            <md-select-option value="M">
+              <div slot="headline">Masculino</div>
+            </md-select-option>
+        </md-outlined-select>
+
+        <md-outlined-text-field
+            type="tel"
+            class="input"
+            id="tel"
+            name="tel"
+            label="Número de celular"
+            placeholder="Ingresa tu número de teléfono"
+            required
+            error-text="Por favor, ingrese su número de teléfono">
+        </md-outlined-text-field>
+
+        <md-outlined-text-field
+            type="email"
+            class="input"
+            id="email"
+            name="email"
+            label="Correo electrónico"
+            placeholder="Ingresa tu correo electrónico"
+            pattern="[\w\d-]+"
+            suffix-text="@gmail.com"
+            required
+            error-text="Por favor, ingrese su correo electrónico">
+        </md-outlined-text-field>
+
+        <md-outlined-text-field
+            type="password"
+            class="input"
+            id="pass"
+            name="pass"
+            label="Contraseña"
+            placeholder="Ingresa tu contraseña"
+            required
+            error-text="Por favor, ingrese su contraseña">
+        </md-outlined-text-field>
+
+        <md-outlined-text-field
+            type="password"
+            class="input"
+            id="confpass"
+            name="confpass"
+            label="Confirmar contraseña"
+            placeholder="Ingresa de nuevo su contraseña"
+            required
+            error-text="Por favor, ingrese de nuevo su contraseña">
+        </md-outlined-text-field>
+
+        <md-filled-tonal-button
+            type="submit"
+            class="input"
+            id="submitbtn"
+            name="submit">                
+            Registrarse
+        </md-filled-tonal-button>
     </form>
-</body>
-</html>
+    {% if error %}
+        <p class="wrongCredentials">{{error}}</p>
+    {% endif %}
+</div>
 {% endblock %}
