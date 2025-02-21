@@ -58,13 +58,13 @@ def registro_usuario(request):
 
 def login(request):
     if request.method == "POST":
-        username = request.POST.get("username")
+        email = request.POST.get("email")
         password = request.POST.get("password")
 
-        if not username or not password:
+        if not email or not password:
             return HttpResponse("Por favor, ingresa usuario y contraseña", status=400)
 
-        user = person_collection.find_one({"username": username})
+        user = person_collection.find_one({"email": email})
 
         if user and check_password(password, user["password"]):
             request.session["username"] = user["username"]

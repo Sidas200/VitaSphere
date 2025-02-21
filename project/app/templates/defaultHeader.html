@@ -38,7 +38,7 @@
       {% endif %}
       {% if not user.email %} 
         <li class="nav-item"><a class="nav-link" href="/login/">Inicio de sesión</a></li>
-        <li class="nav-item"><a class="nav-link" href="/register/">Registo</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'registro' %}">Registro</a></li>
       {% endif %}
     </ul>
   </header>
