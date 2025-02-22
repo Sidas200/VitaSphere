@@ -1,0 +1,104 @@
+.container {
+    padding: 0;
+}
+
+.homeContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.homeContainer h2 {
+    text-align: center;
+    margin: 0;
+}
+
+.wellcome {
+    background-color: rgb(220, 220, 220);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.wellcomeText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about, .features {
+    display: flex;
+    flex-direction: column;
+    padding: 3%;
+}
+
+.features {
+    padding-top: 0;
+}
+
+.about div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.about div p, .about div ul {
+    flex: 1;
+    margin: 0;
+    padding: 2%;
+}
+
+.featuresContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.card {
+    flex: 1;
+    margin: 2%;
+    background-color: lightgray;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.cardContainer {
+    padding: 2px 16px;
+    text-align: center;
+}
+
+.call {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: lightgray;
+    padding: 3%;
+}
+
+.call h1 {
+    margin: 0;
+}
+
+.call p {
+    margin: 2%;
+}
+
+:root {
+    --md-filled-tonal-button-container-shape: 0px;
+    --md-filled-tonal-button-label-text-font: system-ui;
+    --md-sys-color-secondary-container: black;
+    --md-sys-color-on-secondary-container: white;
+}
+
+.redirect {
+    border-radius: 5px;
+}
