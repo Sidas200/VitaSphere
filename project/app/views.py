@@ -93,6 +93,7 @@ def users(request):
 def home (request):
     return render(request, "home.html")
 
-
+def datos(request):
+    return render(request, "datos.html")
 
 
