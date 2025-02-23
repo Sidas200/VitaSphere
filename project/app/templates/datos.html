@@ -1,0 +1,53 @@
+{% extends 'defaultHeader.html' %}
+
+{% block title %}
+    Metricas
+{% endblock %}
+{% block links %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'datos1.css' %}">
+{% endblock %}
+{% block content %}
+   <div id="fondoN">
+   <h1 class="titulo">Bienvenido de nuevo, {nombre}!</h1>
+   <h2 class="subtitulo">Aqui tienes una ersumen de tus estadisticas de salud.</h2>
+
+       <div id="sep" >
+           <div class="Con_esta">
+               <div class="Tex_img">
+               <p class="peque"> Pulso</p><img class="iconos" src="{% static 'images/like.png' %}" alt="imagen corazon" >
+               </div>
+               <p class="sign"> {72} bmp</p>
+           </div>
+
+           <div class="Con_esta">
+               <div class="Tex_img">
+                   <p class="peque"> Nivel de oxigeno</p>
+                   <!-- logo de gota-->
+               </div>
+               <p class="sign"> {98}%</p>
+           </div>
+
+           <div class="Con_esta">
+               <div class="Tex_img">
+                   <p class="peque"> Temperatura</p>
+                   <!-- logo de nube-->
+               </div>
+               <p class="sign"> {37}°C</p>
+           </div>
+
+           <div class="Con_esta">
+               <div class="Tex_img">
+                   <p class="peque"> Caidas(Ult. 30 dias) </p>
+
+               </div>
+               <p class="sign"> {0}</p>
+           </div>
+       </div>
+
+   <div id="Con_graf">
+       <h1>Estadísticas de Salud</h1>
+
+   </div>
+   </div>
+{% endblock %}
