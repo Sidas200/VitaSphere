@@ -96,4 +96,7 @@ def home (request):
 def datos(request):
     return render(request, "datos.html")
 
+def profile (request):
+    return render(request, "profile.html")
+
 
