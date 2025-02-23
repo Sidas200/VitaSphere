@@ -10,12 +10,13 @@
 {% block content %}
    <div id="fondoN">
    <h1 class="titulo">Bienvenido de nuevo, {nombre}!</h1>
-   <h2 class="subtitulo">Aqui tienes una ersumen de tus estadisticas de salud.</h2>
+   <h2 class="subtitulo">Aqui tienes un resumen de tus estadisticas de salud.</h2>
 
        <div id="sep" >
            <div class="Con_esta">
                <div class="Tex_img">
-               <p class="peque"> Pulso</p><img class="iconos" src="{% static 'images/like.png' %}" alt="imagen corazon" >
+               <p class="peque"> Pulso</p>
+                   <img class="iconos" src="{% static 'images/like.png' %}" alt="imagen corazon" >
                </div>
                <p class="sign"> {72} bmp</p>
            </div>
@@ -23,7 +24,7 @@
            <div class="Con_esta">
                <div class="Tex_img">
                    <p class="peque"> Nivel de oxigeno</p>
-                   <!-- logo de gota-->
+                   <img class="iconos" src="{% static 'images/drop.png' %}" alt="Imagen gota" >
                </div>
                <p class="sign"> {98}%</p>
            </div>
@@ -31,22 +32,21 @@
            <div class="Con_esta">
                <div class="Tex_img">
                    <p class="peque"> Temperatura</p>
-                   <!-- logo de nube-->
+                   <img class="iconos" src="{% static 'images/cloud.png' %}" alt="Imagen nube" >
                </div>
                <p class="sign"> {37}°C</p>
            </div>
 
            <div class="Con_esta">
                <div class="Tex_img">
-                   <p class="peque"> Caidas(Ult. 30 dias) </p>
-
+                   <p class="peque"> Caidas (Ult. 30 dias) </p>
                </div>
                <p class="sign"> {0}</p>
            </div>
        </div>
 
    <div id="Con_graf">
-       <h1>Estadísticas de Salud</h1>
+       <h1 style="margin: 0 0 0 0">Estadísticas de Salud</h1>
 
    </div>
    </div>
