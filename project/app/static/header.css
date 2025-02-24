@@ -8,11 +8,13 @@
 }
 
 .headerHome {
-    background-color: lightgray;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 2%;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
 }
 
 .nav {
