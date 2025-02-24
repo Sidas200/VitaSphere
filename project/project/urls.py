@@ -29,5 +29,6 @@ urlpatterns = [
     path("users/", views.users, name="users"),
     path("", views.home, name="home"),
     path('datos/',views.datos, name="datos"),
-    path("profile/", views.profile, name="profile")
+    path("profile/", views.profile, name="profile"),
+    path("settings/", views.settings, name="settings")
 ]
