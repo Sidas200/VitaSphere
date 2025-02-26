@@ -1,20 +1,17 @@
-.container {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 5%;
-    padding-bottom: 5%;
-}
-
-.headerHome {
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 2%;
-    background-color: white;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
+    background-color: var(--Blue-500);
+}
+
+header a {
+    text-decoration: none;
+    color: var(--Blue-100);
+    font-family: "Quicksand", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
 }
 
 .nav {
@@ -23,45 +20,72 @@
     padding: 0;
 }
 
-.nav-item {
+.nav li {
     float: left;
     text-align: center;
     margin-left: 10px;
 }
 
-.nav-link {
-    text-decoration: none;
-    color: black;
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+    padding: 3%;
+    text-align: center;
+    background-color: var(--Blue-500);
 }
 
 .footer {
-    padding: 0;
-    text-align: center;
-}
-
-.footerContainer {
     display: flex;
     justify-content: space-around;
+    text-align: center;
 }
 
 .footerSection {
-  text-align: center;
-  width: 20%;
+    width: 20%;
 }
 
-.footerSection p, .footerSection a {
-  color: black;
-  text-decoration: none;
+.footerSection h3 {
+    color: var(--Blue-100);
+    font-family: "Quicksand", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+}
+
+footer p, .footerSection p, .footerSection a {
+    text-decoration: none;
+    color: var(--Blue-100);
+    font-family: "Roboto", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
 }
 
 .footerSection a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
-.footerTable {
-    text-align: center;
+.footer hr {
+    color: var(--Blue-100);
 }
 
-hr {
-    color: lightgray;
+.socialMedia {
+    display: flex; 
+    justify-content: center; 
+    gap: 5%;
+    margin-top: 1%;
+}
+
+.socialMedia img {
+    width: 10%;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+    filter: invert(1);
+}
+
+.socialMedia img:hover {
+    transform: scale(1.2);
 }
