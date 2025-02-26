@@ -82,7 +82,7 @@
     padding: 2%;
 }
 
-about div p, .about div ul {
+.about div p, .about div ul {
     flex: 1;
     margin: 0;
     padding: 2%;
