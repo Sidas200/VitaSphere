@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-s*%2@_yb==1*e(sul*q@zrjo(%iiio7pzgo6)wd3o@m=n$+*yx
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["https://vitasphere1.onrender.com"]
 
 
 # Application definition
