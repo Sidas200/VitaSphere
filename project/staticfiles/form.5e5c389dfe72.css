@@ -1,0 +1,62 @@
+.divForm {
+    width: 30%;
+    border-radius: 8px;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+    
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+}
+
+.greetingForm {
+    margin: 0;
+    text-align: center;
+}
+    
+.greetingComplement {
+    color: grey;
+    margin: 5%;
+    text-align: center;
+}
+
+.input {
+    margin-bottom: 5%;
+    padding: 10px;
+    border-radius: 5px;
+    padding: 0;
+}
+
+.submit {
+    background-color: black;
+    color: white;
+}
+    
+a {
+    text-decoration: underline;
+    color: black;
+}
+
+.wrongCredentials {
+    color: red;
+}
+
+:root {
+    --md-outlined-text-field-container-shape: 0px;
+    --md-sys-typescale-body-large: 400 1rem system-ui;
+    --md-sys-color-primary: black;
+    --md-outlined-text-field-label-text-color: #3f4948;
+    --md-outlined-text-field-input-text-color: #161d1d;
+
+    --md-filled-tonal-button-container-shape: 0px;
+    --md-filled-tonal-button-label-text-font: system-ui;
+    --md-sys-color-secondary-container: black;
+    --md-sys-color-on-secondary-container: white;
+}

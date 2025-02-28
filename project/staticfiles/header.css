@@ -1,0 +1,91 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2%;
+    background-color: var(--Blue-500);
+}
+
+header a {
+    text-decoration: none;
+    color: var(--Blue-100);
+    font-family: "Quicksand", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+}
+
+.nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav li {
+    float: left;
+    text-align: center;
+    margin-left: 10px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+    padding: 3%;
+    text-align: center;
+    background-color: var(--Blue-500);
+}
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.footerSection {
+    width: 20%;
+}
+
+.footerSection h3 {
+    color: var(--Blue-100);
+    font-family: "Quicksand", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+}
+
+footer p, .footerSection p, .footerSection a {
+    text-decoration: none;
+    color: var(--Blue-100);
+    font-family: "Roboto", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+}
+
+.footerSection a:hover {
+    text-decoration: underline;
+}
+
+.footer hr {
+    color: var(--Blue-100);
+}
+
+.socialMedia {
+    display: flex; 
+    justify-content: center; 
+    gap: 5%;
+    margin-top: 1%;
+}
+
+.socialMedia img {
+    width: 10%;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+    filter: invert(1);
+}
+
+.socialMedia img:hover {
+    transform: scale(1.2);
+}
