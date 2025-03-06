@@ -17,23 +17,20 @@ def primero(request):
 
 def registro_usuario(request):
     if request.method == "POST":
-        form = RegistroUsuarioForm(request.POST)
-        if form.is_valid():
-            name = form.cleaned_data["name"]
-            apellidos = form.cleaned_data["apellidos"]
-            telefono = form.cleaned_data["telefono"]
-            domicilio = form.cleaned_data["domicilio"]
-            estatus = form.cleaned_data["status"]
-            username = form.cleaned_data["username"]
-            email = form.cleaned_data["email"]
-            password = form.cleaned_data["password"]
-            fecha = form.cleaned_data["fecha"]
+            name = request.POST.get("fname")
+            apellidos = request.POST.get("lname")
+            telefono = request.POST.get("tel")
+            email = request.POST.get("email")
+            password = request.POST.get("pass")
+            conf_pass = request.POST.get("confpass")
+            fecha = request.POST.get("birthday")
 
-            existing_user = person_collection.find_one({"username": username})
+            existing_user = person_collection.find_one({"email": email})
             if existing_user:
                 return HttpResponse("El usuario ya existe", status=400)
 
             hashed_password = make_password(password)
+            hashed_confpassword = make_password(conf_pass)
 
         
             person_collection.insert_one({
@@ -41,11 +38,9 @@ def registro_usuario(request):
                 "nombre": name,
                 "apellidos": apellidos,
                 "telefono": telefono,
-                "domicilio": domicilio,
-                "estatus": estatus,
-                "username": username,
                 "email": email,
                 "password": hashed_password,
+                "confpassword": hashed_confpassword,
                 "fecha":fecha
             })
 
@@ -58,16 +53,15 @@ def registro_usuario(request):
 
 def login(request):
     if request.method == "POST":
-        username = request.POST.get("username")
+        email = request.POST.get("email")
         password = request.POST.get("password")
 
-        if not username or not password:
+        if not email or not password:
             return HttpResponse("Por favor, ingresa usuario y contraseña", status=400)
 
-        user = person_collection.find_one({"username": username})
+        user = person_collection.find_one({"email": email})
 
         if user and check_password(password, user["password"]):
-            request.session["username"] = user["username"]
             request.session["email"] = user["email"]
             request.session["nombre"] = user["nombre"]
             request.session["is_authenticated"] = True
@@ -90,6 +84,14 @@ def users(request):
 
     return render(request, "users.html", {"users": user_list})
 
+def home (request):
+    return render(request, "home.html")
 
+def datos(request):
+    return render(request, "datos.html")
 
-
+def profile (request):
+    return render(request, "profile.html")
+    
+def settings (request):
+    return render(request, 'settings.html')

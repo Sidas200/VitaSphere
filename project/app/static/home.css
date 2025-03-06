@@ -1,0 +1,156 @@
+:root {
+    --md-filled-tonal-button-container-shape: 0px;
+    --md-filled-tonal-button-label-text-font: system-ui;
+    --md-sys-color-secondary-container: var(--Green-spring);
+    --md-sys-color-on-secondary-container: var(--Outer-space);
+}
+
+.welcome {
+    display: flex;
+    justify-content: space-around;
+    padding-left: 5%;
+    padding-right: 5%;
+    background-image: radial-gradient(circle, var(--Blue-500), var(--Blue-200));
+}
+
+.welcome div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.welcome div h1 {
+    font-family: "Quicksand", serif;
+    font-weight: 700;
+    font-size: 50px;
+    color: white;
+}
+
+.welcome div p {
+    font-family: "Roboto", serif;
+    font-weight: 400;
+    font-size: 28px;
+    color: white;
+    line-height: 2;
+}
+
+.about, .features, .call {
+    display: flex;
+    flex-direction: column;
+    padding: 3%;
+    font-family: "Roboto", serif;
+    font-weight: 400;
+    line-height: 2;
+}
+
+.features {
+    padding-top: 0;
+}
+
+.about, .features {
+    background-color: var(--Green-spring);
+}
+
+.about h2, .features h2, .call h1 {
+    margin: 0;
+    text-align: center;
+    font-family: "Quicksand", serif;
+    font-weight: 700;
+    font-size: 28px;
+}
+
+.about h2, .features h2 {
+    color: var(--Mineral-green);
+}
+
+.about div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.about div, .features div {
+    color: var(--Outer-space);
+    font-size: 18px;
+}
+
+.about div p, .about div ul {
+    flex: 1;
+    margin: 0;
+    padding: 2%;
+}
+
+.about div p, .about div ul {
+    flex: 1;
+    margin: 0;
+    padding: 2%;
+}
+
+.about li {
+    position: relative;
+    padding-left: 3%;
+}
+
+.about ul li::marker {
+    content: "✔";
+    color: var(--Asparagus);
+}
+
+.featuresContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.card {
+    flex: 1;
+    margin: 2%;
+    background-color: white;
+    opacity: 80%;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.card div {
+    padding: 2px 16px;
+    text-align: center;
+}
+
+.card img {
+    width: 20%;
+    height: auto;
+    margin-top: 10%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.call {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 3%;
+    background-color: var(--Mineral-green);
+    color: var(--Asparagus);
+}
+
+.call h1 {
+    margin: 0;
+}
+
+.call p {
+    margin: 2%;
+    font-size: 18px;
+}
+
+.redirect {
+    border-radius: 5px;
+}

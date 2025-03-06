@@ -1,0 +1,68 @@
+.container {
+    padding: 0;
+}
+
+.profCont {
+    width: 100%;
+    padding: 4% 12% 8% 12%;
+    display: grid;
+    gap: 9% 3%;
+    margin-bottom: 3%;
+}
+
+.profTitle {
+    grid-column: 1 / span 3;
+    padding-left: 2%;
+}
+
+.profImg {
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.profImg h1, .profImg p {
+    text-align: center;
+}
+
+.profTitle, .profImg, .card {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.card {
+    padding-left: 4%;
+}
+
+.profTitle:hover, .profImg:hover,.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.cardContainer {
+    text-align: start;
+}
+
+.actCont {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+:root {
+    --md-filled-tonal-button-container-shape: 0px;
+    --md-filled-tonal-button-label-text-font: system-ui;
+    --md-sys-color-secondary-container: black;
+    --md-sys-color-on-secondary-container: white;
+}
+
+.input {
+    width: 100%;
+    padding: 1%;
+    border-radius: 5px;
+    height: 75px;
+}

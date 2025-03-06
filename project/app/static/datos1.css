@@ -1,0 +1,72 @@
+.container {
+    padding: 0;
+    display: flex;
+    align-items: start;
+}
+
+#fondoN{
+    /*contenedor de todo*/
+    background-color: pink;
+    padding:3% 6% 3% 6% ;
+    width: 100%;
+    height: 100%;
+}
+.Con_esta{/*conetenedro de las metricas */
+    background-color: white;
+    width: 100%;
+    max-width: 380px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    box-shadow: 0.4px 8px 0 rgba(0,0,0,0.06);
+    transition: 0.3s;
+    padding: 0 20px 5px 23px;
+    font-size: 25px;
+}
+
+#Con_graf { /*contenedor de la grafica*/
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0.4px 8px 0 rgba(0, 0, 0, 0.06);
+    transition: 0.3s;
+    padding: 5px 0 0 23px;
+    height: 100%;
+    margin-top: 25px;
+}
+
+#sep{/* Contenedor de los 4 recuadros de arriba*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.peque{/*letra de los titulos de los recuadros*/
+    font-size: 25px;
+    margin:0 0 0 0;
+
+}
+.sign{/*Letra de los signos*/
+    font-size: 35px;
+    font-weight: bold;
+    margin: 10px 0 10px 0;
+}
+
+h1{
+    font-size: 38px;
+    font-weight: bold;
+}
+h2{
+    font-size: 29px;
+    font-weight: normal;
+}
+
+.Tex_img{
+    height: 35px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px 10px 10px 0;
+}
+
+.iconos{
+    height: 100%;
+    width: auto;
+}

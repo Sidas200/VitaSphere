@@ -10,6 +10,10 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'styles.css' %}">
     <link rel="stylesheet" href="{% static 'header.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     {% block links %}
     {% endblock %}
     <script type="importmap">
@@ -26,19 +30,19 @@
     </script>
 </head>
 <body>
-  <header class="headerHome">
-    <a class="nav-link" href="/">VitaSphere</a>
+  <header>
+    <a href="/">VitaSphere</a>
     <ul class="nav">
-      <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-      <li class="nav-item"><a class="nav-link" href="/">Acerca de</a></li>
-      <li class="nav-item"><a class="nav-link" href="/">Contacto</a></li>
-      <li class="nav-item"><a class="nav-link" href="/">Características</a></li>
+      <li><a href="/">Home</a></li>
+      <li><a href="#about">Acerca de</a></li>
+      <li><a href="#contact">Contacto</a></li>
+      <li><a href="#features">Características</a></li>
       {% if user.email %}
-        <li class="nav-item"><a class="nav-link" href="/login/">{{user.name}}</a></li>
+        <li><a href="/profile/">{{user.name}}</a></li>
       {% endif %}
       {% if not user.email %} 
-        <li class="nav-item"><a class="nav-link" href="/login/">Inicio de sesión</a></li>
-        <li class="nav-item"><a class="nav-link" href="/register/">Registo</a></li>
+        <li><a href="{% url 'login' %}">Inicio de sesión</a></li>
+        <li><a href="{% url 'registro' %}">Registro</a></li>
       {% endif %}
     </ul>
   </header>
@@ -46,30 +50,31 @@
     {% block content %}
     {% endblock %}
   </main>
-  <footer class="footer">
-    <div class="footerContainer">
+  <footer>
+    <div class="footer">
       <div class="footerSection">
         <h3>Contáctanos</h3>
         <p>info@vitasphere.com</p>
-        <p>+52 (614) 136-3900</p>
+        <p>01 800 288 2666</p>
       </div>
       <div class="footerSection">
         <h3>Legales</h3>
         <p><a href="/">Política de Privacidad</a></p>
         <p><a href="/">Términos y Condiciones</a></p>
       </div>
-      <div class="footerSection">
+      <div class="footerSection" id="contact">
         <h3>Síguenos</h3>
-        <div class="socialIcons">
-          <a href="/"><i class="fab fa-youtube"></i></a>
-          <a href="/"><i class="fab fa-instagram"></i></a>
-          <a href="/"><i class="fab fa-facebook"></i></a>
+        <div class="socialMedia">
+          <img src="{% static 'images/socialMedia/yt.png' %}" alt="Icono YouTube">
+          <img src="{% static 'images/socialMedia/ig.png' %}" alt="Icono Instagram">
+          <img src="{% static 'images/socialMedia/fb.png' %}" alt="Icono Facebook">
+          <img src="{% static 'images/socialMedia/tik-tok.png' %}" alt="Icono Tik Tok">
         </div>
         <p>@vitasphere</p>
       </div>
     </div>
     <hr>
-    <p>2024 VitaSphere. Todos los derechos reservados.</p>
+    <p>2025 VitaSphere. Todos los derechos reservados.</p>
   </footer>
 </body>
 </html>
