@@ -66,7 +66,7 @@ def login(request):
             request.session["nombre"] = user["nombre"]
             request.session["is_authenticated"] = True
     
-            return redirect("users")
+            return redirect("profile")
 
         return HttpResponse("Usuario o contraseña incorrectos", status=401)
 
@@ -90,8 +90,27 @@ def home (request):
 def datos(request):
     return render(request, "datos.html")
 
-def profile (request):
-    return render(request, "profile.html")
+def profile(request):
+    if not request.session.get("is_authenticated", False):
+        return redirect("login")
+    
+    # Conectar a MongoD
+    user_email = request.session.get("user_email")
+    user_data = person_collection.find_one({"email": user_email})
+    
+    if not user_data:
+        return redirect("login")
+    
+    context = {
+        'fname': user_data.get("nombre", "No registrado"),
+        'lname': user_data.get("apellidos", "No registrado"),
+        'email': user_data.get("email", "No registrado"),
+        'phone': user_data.get("telefono", "No registrado"),
+        'birth_date': user_data.get("fecha", "No registrado"),
+    }
+    
+    return render(request, "profile.html", context)
+
     
 def settings (request):
     return render(request, 'settings.html')

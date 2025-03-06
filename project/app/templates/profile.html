@@ -18,47 +18,39 @@
     </div>
     <div class="profImg">
         <div class="cardContainer">
-            <h1>{fname}</h1>
-            <p>{uname}</p>
+            <h1>{{ fname }}</h1>
+            <p>{ uname }</p>
         </div>
     </div>
     <div class="card">
         <div class="cardContainer">
             <p>Nombre(s)</p>
-            <h4>{fname}</h4>
+            <h4>{{ fname }}</h4>
             <p>Apellido(s)</p>
-            <h4>{lname}</h4>
+            <h4>{{ lname }}</h4>
         </div>
     </div>
     <div class="card">
         <div class="cardContainer">
             <p>Fecha de nacimiento</p>
-            <h4>{dd/mm/aa}</h4>
+            <h4>{{ birth_date }}</h4>
             <p>Sexo</p>
-            <h4>{sex}</h4>
+            <h4>{ sex }</h4>
         </div>
     </div>
     <div class="card">
         <div class="cardContainer">
             <p>Correo electrónico</p>
-            <h4>{email}</h4>
+            <h4>{{ email }}</h4>
             <p>Número de teléfono</p>
-            <h4>{phone}</h4>
+            <h4>{{ phone }}</h4>
         </div>
     </div>
     <div class="actCont">
-        <md-filled-tonal-button
-            type="button"
-            class="input"
-            id="editbtn"
-            name="button">
+        <md-filled-tonal-button type="button" class="input" id="editbtn" name="button">
             Editar Perfil
         </md-filled-tonal-button>   
-        <md-filled-tonal-button
-            type="button"
-            class="input"
-            id="deletebtn"
-            name="button">
+        <md-filled-tonal-button type="button" class="input" id="deletebtn" name="button">
             Eliminar Cuenta
         </md-filled-tonal-button>
     </div>
