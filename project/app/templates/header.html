@@ -8,6 +8,7 @@
         {% endblock %}
     </title>
     {% load static %}
+    <link rel="icon" href="{% static 'images/vitasphereLogo.png' %}">
     <link rel="stylesheet" href="{% static 'styles.css' %}">
     <link rel="stylesheet" href="{% static 'header.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,7 +32,10 @@
 </head>
 <body>
   <header>
-    <a href="/">VitaSphere</a>
+    <div class="company">
+      <!-- <img src="{% static 'images/vitasphereLogo.png' %}" alt="Logo VitaSphere"> -->
+      <a href="/">VitaSphere</a>
+    </div>
     <ul class="nav">
       <li><a href="/">Home</a></li>
       <li><a href="#about">Acerca de</a></li>
